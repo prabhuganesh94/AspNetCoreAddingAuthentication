@@ -63,7 +63,7 @@ namespace WishList.Controllers
             if (!ModelState.IsValid)
                 return View("Login",loginViewModel);
 
-            var result = _signInManager.PasswordSignInAsync(new ApplicationUser { Email = loginViewModel.Email, UserName = loginViewModel.Email }, loginViewModel.Password, false, false);
+            var result = _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, false, false);
             if (!result.Result.Succeeded)
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 
