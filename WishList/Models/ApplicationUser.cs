@@ -8,4 +8,4 @@ namespace WishList.Models
         public virtual ICollection<Item> Items { get; set; }
     }
 }
-`
+
